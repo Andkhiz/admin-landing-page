@@ -36,3 +36,146 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Стили для боковой панели справа */
+.sidebar-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: flex-end;
+  width: 20vw; /* Установите нужную ширину панели */
+  min-width: 150px;
+  background-color: #f0f0f0; /* Пример цвета фона */
+  padding: 20px;
+}
+
+/* Стили для кнопок боковой панели */
+.sidebar-button {
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  background-color: #ccc; /* Пример цвета кнопок */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.sidebar-button_action {
+  background-color: #5f5f5f; /* Пример цвета кнопок */
+}
+
+.sidebar-button:hover {
+  background-color: #a8a5a5; /* Пример цвета кнопок */
+}
+
+.sidebar-button:last-child {
+  margin-bottom: 0;
+}
+
+.container {
+  height: 90vh;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18vh; /* Высота заголовка (подстроить по своим требованиям) */
+  background-color: #ffa600; /* Пример цвета фона заголовка */
+  color: #fff; /* Пример цвета текста заголовка */
+  flex-direction: column;
+}
+
+.header-container p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px; /* Размер текста заголовка (подстроить по своим требованиям) */
+}
+
+.for-btn-pay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #a8a5a5;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.page {
+  flex-grow: 1;
+}
+
+#btn-super-light, #btn-light {
+  flex-grow: 1;
+  flex: 1;
+  max-width: 80%;
+  padding: 10px;
+}
+
+.tarif-text {
+  padding: 10px;
+  flex: 2;
+}
+
+/* Общие стили для таблицы */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+/* Стили для заголовков */
+/*th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}*/
+th {
+  display: none;
+}
+
+/* Стили для ячеек данных */
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Чередование цветов строк */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.btn-pay {
+  display: inline-block;
+  padding: 7px 40px;
+  background-color: #ffbb00;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Стили при наведении на кнопку */
+.btn-pay:hover {
+  background-color: #cf7c00;
+}
+
+/* Стили при нажатии на кнопку */
+.btn-pay:active {
+  transform: scale(0.95);
+}
