@@ -6,6 +6,7 @@ import { ReactComponent as GoogleIcon } from './icon/google.svg';
 import './App.css'; // Подключите стили для страницы
 import Sidebar from './components/sidebar';
 import BtnStripePay from './components/btnStripe';
+import BtnPrice from './components/btnPrice';
 import LandingList from './components/landingList';
 import { publishableKey, buyButtonIdLight, buyButtonIdSuperLight } from './const';
 
@@ -13,13 +14,14 @@ const token = 'token';
 
 function App() {
   const access_token = localStorage.getItem(token);
-
+/*
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://js.stripe.com/v3/buy-button.js';
     script.async = true;
     document.body.appendChild(script);
   }, []);
+  */
 
   const [ user, setUser ] = useState(access_token === null ? [] : {access_token});
   const [ page, setPage ] = useState('main');
@@ -32,6 +34,7 @@ function App() {
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log('Login Failed:', error)
   });
+
   
   useEffect(
       () => {
@@ -97,7 +100,7 @@ function App() {
                      ( 
                      <div className='page'>
                         { page === 'main' ? (
-                          <>
+                          <> 
                             {
                               <LandingList 
                                 myUserData={myUserData}
@@ -109,6 +112,11 @@ function App() {
                           </>)
                         : 
                           (<>
+                            <div className='page-btn'>
+                            <BtnPrice/>
+                            <BtnPrice/>
+                            </div>
+                             {/* 
                             <div className='for-btn-pay'>
                             <div className='tarif-text'>
                               <h2>Super light (1$/mo)</h2>
@@ -138,8 +146,16 @@ function App() {
                               clientReferenceId={myUserData?.user?.landing[activePage]?.id}
                               customerEmail={myUserData?.user?.email}
                             />
-                          </div>
+                          </div>*/}
                           </>)
+                        }
+                        { profile?.email 
+                        ?
+                          <div className='footer'>
+                            <p>If you are experiencing any difficulties or have any suggestions on improvement, dont hesitate to write us an email at our email <a href="mailto:pyxl.project@gmail.com">pyxl.project@gmail.com</a></p>
+                          </div>
+                        :
+                          <></>  
                         }
                       </div> 
                       )

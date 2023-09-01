@@ -20,17 +20,25 @@ const Sidebar = (props) => {
   //const classPay = `sidebar-button ${props.activePage === 'pay' ? 'sidebar-button_action' : ''}`
 
   return (
-    <div className="sidebar sidebar-right">
-      
-      {/*<button className={classSetting} onClick={() => setPage('setting')}>Settings</button>
-      <button className={classPay} onClick={() => setPage('pay')}>Payment</button>*/}
-      {landingPageData === undefined ? 
-          ""
-        : 
-          landingPageData.map((el, ind) => { return <button key={ind} onClick={() => setPage(ind)} className={activePage === ind ? 'sidebar-button sidebar-button_action' : 'sidebar-button'}>Website{ind + 1}</button> })}
-      <button className={ activePage === landingPageData?.length ? 'sidebar-button sidebar-button_action' : 'sidebar-button'} onClick={() => setPage(landingPageData.length)}>1 min How-To</button>
-      <button className="sidebar-button" onClick={logOut}>Log Out</button>
-    </div>
+    <>
+      <div className='sidebar'>
+        <div className="sidebar-right">
+          
+          {/*<button className={classSetting} onClick={() => setPage('setting')}>Settings</button>
+          <button className={classPay} onClick={() => setPage('pay')}>Payment</button>*/}
+          {landingPageData === undefined ? 
+              ""
+            : 
+              landingPageData.map((el, ind) => { 
+                return <button key={ind} onClick={() => setPage(ind)} className={activePage === ind ? 'sidebar-button sidebar-button_action' : 'sidebar-button'}>Website{ind + 1}</button> })}
+          <button className={ activePage === landingPageData?.length ? 'sidebar-button sidebar-button_action' : 'sidebar-button'} onClick={() => setPage(landingPageData.length)}>1 min How-To</button>
+          
+        </div>
+        <div className="sidebar-logout">
+          <button className="sidebar-button" onClick={logOut}>Log Out</button>
+        </div>
+      </div>
+    </>
   );
 };
 

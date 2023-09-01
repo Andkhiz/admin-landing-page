@@ -135,14 +135,19 @@ const LandingList = (props) => {
             <td>You can change it at the login</td>
           </tr>
           <tr>
-            <td>Plan</td>
+            <td>{data.tarif === null ? 'Update plan' : 'Plan' }</td>
             <td>{data.tarif === null ? 'none' : data.tarif}</td>
-            <td><button className='btn-pay' onClick={() => clickPay()}> Edit </button></td>
+            <td><button className='btn-pay' onClick={() => clickPay()}> Update </button></td>
           </tr>
           <tr>
             <td>Valid until</td>
             <td>{ data.date === null ? 'none' : toDate(data.date) }</td>
             <td>Changed after pay</td>
+          </tr>
+          {/*<tr>
+            <td>Download</td>
+            <td><a href={`${data.link}index.zip`} download>Website</a></td>
+            <td></td>
           </tr>
           {/*<tr> 
             {/*<td>{index + 1}</td>*//*}
