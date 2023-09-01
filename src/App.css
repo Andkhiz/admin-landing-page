@@ -2445,7 +2445,7 @@ img,video {
 .word-break-word {
   word-break: break-word
 }
-
+/*
 .\[fix\:634\] {
   fix: 634
 }
@@ -2453,7 +2453,7 @@ img,video {
 .\[set\:html\] {
   set: html
 }
-
+*/
 body:lang(ar) {
   font-family: Noto Sans Arabic,sans-serif
 }
