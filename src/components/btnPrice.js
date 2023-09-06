@@ -1,8 +1,36 @@
 import React from 'react';
 
-const BtnPrice = () => {
+const BtnPrice = (props) => {
+    const {noprice, price, tarifName, link, profits} = props;
 
-    return <div className="flex flex-col px-3 py-3 md:w-7/12 lg:w-full relative lg:pt-[40px]">
+    return <div class="mw p-4 w-12 w-12 w-full my-4">
+    <div class="h-full p-4 rounded-lg border-solid border-2 border-gray-300 flex flex-col relative overflow-hidden">
+      <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
+        <label className='text-decoration'>{noprice}</label> {price}
+      </h2>
+      
+      <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">{tarifName}</h1>
+      { profits.map(el => {
+        return <p class="flex items-center justify text-gray-600 mb-2">
+        <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+        </span>{el}
+      </p>
+      }) }
+      <a href={link} class="button flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 focus:outline-none hover:bg-gray-400 rounded">
+        Pay Now
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+      </a>  
+      {/*<p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>*/}
+    </div>
+  </div>
+    
+    /*
+    <div className="flex flex-col px-3 py-3 md:w-7/12 lg:w-full relative lg:pt-[40px]">
     <div data-hk="0-0" className="px-3 pt-6 sm:pt-8 sm:px-4 pb-4 sm:pb-6 flex flex-col items-start text-left rtl:text-right gap-4 relative h-full bg-secondary border-md border-secondary rounded-md group-hover:border-accent transition-colors duration-medium p-0 px-3 pt-6 sm:pt-8 sm:px-4 pb-4 sm:pb-6">
         <a data-hk="0-0-0" data-ga-slug="Complete card" data-ga-extra-plans-selected="nordsec_bundle_complete_2y_13800_3_months_extra @ 2-year plan" className="align-bottom transition-colors ease-out focus-visible:outline-none focus-visible:shadow-focus text-primary hover:text-secondary active:text-accent-active w-full min-h-[150px] flex flex-col items-start" href="https://checkout.nordvpn.com/payment/?product_group=nordvpn&amp;nord_origin=nordvpn&amp;product_period=2_year&amp;currency=EUR&amp;step2_nav_off=true&amp;bundle_type=complete" tabIndex="-1" data-pricing-link="true">
             <div data-hk="0-0" className="inline-block rounded-full text-critical bg-critical-subtle body-xs-medium py-1 px-3 mb-2">
@@ -255,7 +283,7 @@ const BtnPrice = () => {
             </div>
         </div>
     </div>
-</div>
+</div> */
 }
 
 export default BtnPrice;

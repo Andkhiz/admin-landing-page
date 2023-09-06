@@ -5,10 +5,10 @@ import axios from 'axios';
 import { ReactComponent as GoogleIcon } from './icon/google.svg';
 import './App.css'; // Подключите стили для страницы
 import Sidebar from './components/sidebar';
-import BtnStripePay from './components/btnStripe';
 import BtnPrice from './components/btnPrice';
 import LandingList from './components/landingList';
-import { publishableKey, buyButtonIdLight, buyButtonIdSuperLight } from './const';
+import { buyButtons, faq } from './const';
+import FAQPage from './components/FAQPage';
 
 const token = 'token';
 
@@ -95,7 +95,7 @@ function App() {
                   >
                   </Sidebar>
                   { activePage === -1 || activePage === myUserData.user.landing.length ? 
-                      (<></>)
+                      (<FAQPage faq={faq}/>)
                     :
                      ( 
                      <div className='page'>
@@ -113,8 +113,14 @@ function App() {
                         : 
                           (<>
                             <div className='page-btn'>
-                            <BtnPrice/>
-                            <BtnPrice/>
+                              {buyButtons.buttons.map(el => { 
+                                return <BtnPrice 
+                                  noprice={el.noprice} 
+                                  price={el.price}
+                                  tarifName={el.tarifName}
+                                  link={el.link}
+                                  profits={el.profits}
+                                /> })}
                             </div>
                              {/* 
                             <div className='for-btn-pay'>
