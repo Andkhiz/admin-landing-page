@@ -4,7 +4,7 @@ export const buyButtons = {
         noprice: '$5.99/mo',
         price: '$1.99/mo paid annually',
         tarifName: 'Super light',
-        link: 'https://buy.stripe.com/test_9AQdUJ2Sa8LY34cdQV',
+        link: 'https://buy.stripe.com/test_9AQdUJ2Sa8LY34cdQV?client_reference_id=',
         profits: [
             'Ai assisted builder (why would you come here anyways)',
             'Functional Buttons (enables them to work)',
@@ -18,7 +18,7 @@ export const buyButtons = {
         noprice: '$15.99/mo',
         price: '$8.99/mo paid annually',
         tarifName: 'Light',
-        link: 'https://buy.stripe.com/test_7sI5od50iaU69sA9AG',
+        link: 'https://buy.stripe.com/test_7sI5od50iaU69sA9AG?client_reference_id=',
         profits: [
             'Everything from Super Light +',
             'Enabled Lead forms if you have any - you will get emails any time someone submits a form',

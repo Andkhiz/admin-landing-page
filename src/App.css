@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+p {
+  margin: 0;
+}
+.now{
+  font-size: large;
+  font-weight: bold;
+  background-color: #000000;
+  color: #fa0a0a;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

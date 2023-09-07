@@ -9,6 +9,7 @@ import BtnPrice from './components/btnPrice';
 import LandingList from './components/landingList';
 import { buyButtons, faq } from './const';
 import FAQPage from './components/FAQPage';
+//import BtnStripePay from './components/btnStripe';
 
 const token = 'token';
 
@@ -17,7 +18,7 @@ function App() {
 /*
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://js.stripe.com/v3/buy-button.js';
+    script.src = 'https://js.stripe.com/v3/buy-button.js?';
     script.async = true;
     document.body.appendChild(script);
   }, []);
@@ -94,7 +95,7 @@ function App() {
                     setPage={setPage}
                   >
                   </Sidebar>
-                  { activePage === -1 || activePage === myUserData.user.landing.length ? 
+                  { activePage === -1 ? <></> : activePage === myUserData.user.landing.length ? 
                       (<FAQPage faq={faq}/>)
                     :
                      ( 
@@ -112,15 +113,24 @@ function App() {
                           </>)
                         : 
                           (<>
+                            <div className='now'>
+                            <p>Now Free!!!</p>
+                              <p>Cart number: 4242 4242 4242 4242</p>
+                              <p>Month/YY: 12/34</p>
+                              </div>  
                             <div className='page-btn'>
                               {buyButtons.buttons.map(el => { 
                                 return <BtnPrice 
                                   noprice={el.noprice} 
                                   price={el.price}
                                   tarifName={el.tarifName}
-                                  link={el.link}
+                                  link={`${el.link}${myUserData.user.landing[activePage].id}`}
                                   profits={el.profits}
                                 /> })}
+                               {/* <BtnStripePay buyButtonId={'buy_btn_1Nfz9dCDDrGgviapgOWnOq0h'}
+                                publishableKey={'pk_test_51NVx6PCDDrGgviap9yVasFTM0I2UEPtcapxkSR6uwzVkMMENEff4YybVmaBbQpodR5sk5K1aBWovtuvtv9NS2LsL00N0qG6hJh'}
+                                clientReferenceId={'123'}
+                              customerEmail={'andkhiz@gmail.com'} />*/}
                             </div>
                              {/* 
                             <div className='for-btn-pay'>
