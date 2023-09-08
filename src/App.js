@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="App">
       <header className="header-container">
-        <h1>Pyxl.uk - Micro Website Hosting</h1>
+        <h1>InstaSite - Micro Website Hosting</h1>
         { profile?.name === undefined ?
           (<></>)
           :

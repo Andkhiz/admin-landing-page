@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const LandingList = (props) => {
   const d = props.myUserData.user.landing[props.activePage];
+  const email = props.myUserData.user.email;
   const [data, setData] = useState(d);
   //const data = [props.myUserData?.user?.landing[props.activePage]];
   const [isEditing, setIsEditing] = useState(false);
@@ -72,7 +73,7 @@ const LandingList = (props) => {
     const date = new Date(second * 1000).toLocaleString();
     return date.split(',')[0]
   }
-
+console.log(data)
   return (
     <table style={{ width: '100%' }}>
       <thead>
@@ -135,14 +136,19 @@ const LandingList = (props) => {
             <td>You can change it at the login</td>
           </tr>
           <tr>
-            <td>{data.tarif === null ? 'Update plan' : 'Plan' }</td>
+            <td>{data.tarif === null ? 'Upgrade Plan' : 'Plan' }</td>
             <td>{data.tarif === null ? 'none' : data.tarif}</td>
-            <td><button className='btn-pay' onClick={() => clickPay()}> Update </button></td>
+            <td><button className='btn-pay' onClick={() => clickPay()}> Upgrade </button></td>
           </tr>
           <tr>
             <td>Valid until</td>
             <td>{ data.date === null ? 'none' : toDate(data.date) }</td>
             <td>Changed after pay</td>
+          </tr>
+          <tr>
+            <td>Email-recipient of the forms submitted on the website</td>
+            <td>{ email }</td>
+            <td></td>
           </tr>
           {/*<tr>
             <td>Download</td>
