@@ -1,30 +1,32 @@
 import React from 'react';
 
 const BtnPrice = (props) => {
-    const {noprice, price, tarifName, link, profits} = props;
+    const {noprice, price, tarifName, link, profits, howPay, main} = props;
 
-    return <div class="mw p-4 w-12 w-12 w-full my-4">
-    <div class="h-full p-4 rounded-lg border-solid border-2 border-gray-300 flex flex-col relative overflow-hidden">
-      <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
-        <label className='text-decoration'>{noprice}</label> {price}
-      </h2>
-      
-      <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">{tarifName}</h1>
-      { profits.map(el => {
-        return <p class="flex items-center justify text-gray-600 mb-2">
-        <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5"></path>
-          </svg>
-        </span>{el}
-      </p>
-      }) }
-      <a href={link} class="button flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 focus:outline-none hover:bg-gray-400 rounded">
-        Pay Now
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-      </a>  
+    return <div class="p-4 my-4 price-btn">
+    <div class={`h-full p-4 rounded-lg  flex flex-col  btn-pay-block ${main ? 'btn-pay-block_main' : ''} `}>
+      <div class="text-sm tracking-widest title-font mb-1 font-medium flex flex-col">
+        <p className='price-tarif'>{tarifName}</p>
+        <p className='text-decoration'>{noprice}</p>
+        <p className='text-price flex items-center'>{price}<label className='text-price-period'>/Mo</label></p>
+        <p className='text-how-pay'>{howPay}</p>
+      </div>
+      <a href={link} class={`button flex mt-6 items-center justify-center text-white border-0 py-2 px-4 focus:outline-none rounded page-pay-btn-pay ${main ? 'page-pay-btn-pay_main' : '' }`}>
+        Upgrade
+      </a> 
+      <div className='btn-pay-options'>
+        { profits.map((el, ind, ar) => {
+            return <p class={`flex items-center justify text-gray-600 ${ind === ar.length -1 ? '' : 'mb-5'}`}>
+            <span class={`btn-pay-options-ok ${main ? 'btn-pay-options-ok_main' : ''} w-8 h-8 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0`}>
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+            </span>
+            <div className='btn-pay-option-item'>{el}</div>
+        </p>
+        }) }
+      </div>  
+       
       {/*<p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>*/}
     </div>
   </div>

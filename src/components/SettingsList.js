@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import SettingsItem from './SettingItem';
 
-const LandingList = (props) => {
+const SettingsList = (props) => {
   const d = props.myUserData.user.landing[props.activePage];
   const email = props.myUserData.user.email;
   const [data, setData] = useState(d);
@@ -29,7 +30,7 @@ const LandingList = (props) => {
   }
 
   const handleSave = () => {
-    if (data.domain.split('.')[0].length < 6) {
+    if (data.domain === null || data.domain.split('.')[0].length < 6) {
       window.alert('Domain length can be at least 6 characters!');
       return;
     }
@@ -75,7 +76,108 @@ const LandingList = (props) => {
   }
 console.log(data)
   return (
-    <table style={{ width: '100%' }}>
+    <div className='setting'>
+      <h2 className='setting-header'>Settings</h2>
+      <SettingsItem 
+        title= "Name"
+        text="Website"
+        note=""
+        isEditing={false}
+        isButton={false}
+        isLink={false}
+        link=""
+      />
+      
+      {/* ---- Пока такой костыль           */}
+        <div className="setting-item">
+          <h3 className="setting-title">Subdomain</h3>
+          <div className="setting-container">
+            <div className="setting-name">
+              {isEditing === true ? (
+                <>
+                <div>
+                  <input
+                    className="setting-input"
+                    type="text"
+                    value={data.domain === null || data.domain.length === 0 ? '' : String(data.domain).replace('.pyxl.uk', '')}
+                    pattern="^[a-zA-Z]*$"
+                    title="Only latin letters are allowed"
+                    onChange={(e) => {
+                      const newData = {...data};
+                      const inputValue = e.target.value;
+                      if (/^[a-z]*$/.test(inputValue)) {
+                        newData.domain = inputValue === '' ? '' : `${inputValue}.pyxl.uk`;
+                        setData(newData);
+                      }
+                    }}
+                  />.pyxl.uk
+                </div>
+                <button className='btn-pay' onClick={handleSave} > Save </button>
+                </>
+                ) : (
+                  data.domain === null || data.domain.length === 0 ? 
+                    <>Empty
+                      {data.tarif !== null ? <img src="edit.svg" alt="btn" onClick={handleEdit}></img> : ""}
+                    </> :
+                    <>
+                    <a className="setting-link" href={`https://${data.domain}`} target="_blank" rel="noopener noreferrer">{data.domain}</a>
+                    <img src="edit.svg" alt="btn" onClick={handleEdit}></img> 
+                    </>
+              )}
+              </div>
+            </div> 
+            <h5 className="setting-note"> {(data.domain === null || data.domain.length === 0 ? "" : "Link" )}</h5>
+          </div>
+
+      <SettingsItem 
+        title= "Admin"
+        text={ data.adminLink.includes('data') ? data.adminLink.replace('https://', '') : data.adminLink.replace("http://landing.pyxl.uk/", "landing.pyxl.uk/data/" ) } 
+        note="Link" 
+        isEditing={false} 
+        isButton={false} 
+        isLink={true}
+        link={ data.adminLink.includes('data') ? data.adminLink : data.adminLink.replace("http://landing.pyxl.uk/", "https://landing.pyxl.uk/data/" ) }
+      />
+      <SettingsItem 
+        title= "Password"
+        text= "admin"
+        note="Change it after logging into the system" 
+        isEditing={false} 
+        isButton={false} 
+        isLink={false}
+        link=""
+      />
+      <SettingsItem 
+        title="Current Plan"
+        text= {data.tarif === null ? 'None' : data.tarif }
+        note="" 
+        isEditing={false} 
+        isButton={true}
+        isLink={false}
+        link=""
+        click={clickPay}
+      />
+      <SettingsItem 
+        title="Valid until"
+        text= {data.date === null ? 'none' : toDate(data.date) }
+        note="" 
+        isEditing={false} 
+        isButton={false}
+        isLink={false}
+        link=""
+      />
+      <SettingsItem 
+        title= "Notifications and lead forms (if enabled) are sent to this address"
+        text={email}
+        note="" 
+        isEditing={false} 
+        isButton={false} 
+        isLink={false}
+        link=""
+      />
+    
+    </div>
+    /*<table style={{ width: '100%' }}>
       <thead>
         <tr>
           <th style={{ width: '30%' }}></th>
@@ -193,10 +295,10 @@ console.log(data)
             </td>
             </tr>*/
         //))
-        }
+    /*    }
       </tbody>
-    </table>
+    </table>*/
   );
 };
 
-export default LandingList;
+export default SettingsList;

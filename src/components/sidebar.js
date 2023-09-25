@@ -22,7 +22,7 @@ const Sidebar = (props) => {
   return (
     <>
       <div className='sidebar'>
-        <div className="sidebar-right">
+        <div className="sidebar-left">
           
           {/*<button className={classSetting} onClick={() => setPage('setting')}>Settings</button>
           <button className={classPay} onClick={() => setPage('pay')}>Payment</button>*/}
@@ -35,7 +35,7 @@ const Sidebar = (props) => {
           
         </div>
         <div className="sidebar-logout">
-          <button className="sidebar-button" onClick={logOut}>Log Out</button>
+          <button className="sidebar-button sidebar-button_logout" onClick={logOut}>Log Out</button>
         </div>
       </div>
     </>

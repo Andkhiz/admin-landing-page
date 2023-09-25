@@ -6,9 +6,10 @@ import { ReactComponent as GoogleIcon } from './icon/google.svg';
 import './App.css'; // Подключите стили для страницы
 import Sidebar from './components/sidebar';
 import BtnPrice from './components/btnPrice';
-import LandingList from './components/landingList';
+import SettingsList from './components/SettingsList';
 import { buyButtons, faq } from './const';
 import FAQPage from './components/FAQPage';
+import Header from './components/header';
 //import BtnStripePay from './components/btnStripe';
 
 const token = 'token';
@@ -72,19 +73,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="header-container">
-        <h1>InstaSite - Micro Website Hosting</h1>
-        { profile?.name === undefined ?
-          (<></>)
-          :
-          (<>
-            <p>Name: {profile.name}</p>
-            <p>Email Address: {profile.email}</p>
-          </>
-          )
-        }
-      </header>
-      <div className="container">
+      <Header profile={profile}></Header>
+      
+      <div className={profile?.name === undefined ? 'container container_center' : 'container'}>
             { 
               profile?.email ? (
                 <div className="app-container">
@@ -103,30 +94,35 @@ function App() {
                         { page === 'main' ? (
                           <> 
                             {
-                              <LandingList 
+                              <SettingsList 
                                 myUserData={myUserData}
                                 setMyUserData={setMyUserData}
                                 setPage={setPage}
                                 activePage={activePage}>
-                              </LandingList>
+                              </SettingsList>
                             }
                           </>)
                         : 
                           (<>
-                            <div className='now'>
-                            <p>Now Free!!!</p>
-                              <p>Cart number: 4242 4242 4242 4242</p>
-                              <p>Month/YY: 12/34</p>
-                              </div>  
-                            <div className='page-btn'>
-                              {buyButtons.buttons.map(el => { 
-                                return <BtnPrice 
-                                  noprice={el.noprice} 
-                                  price={el.price}
-                                  tarifName={el.tarifName}
-                                  link={`${el.link}${myUserData.user.landing[activePage].id}`}
-                                  profits={el.profits}
-                                /> })}
+                            <div className='page-btn-header'>
+                              <h2 className='setting-header'>Settings</h2>
+                              <div className='page-header'>
+                                <img src='home.svg' alt="home"/>
+                                <img src='chevron_down.svg' alt="down"/>
+                                Update plan
+                              </div>
+                              <div className='page-btn'>
+                                {buyButtons.buttons.map((el, ind) => { 
+                                  return <BtnPrice 
+                                    main={ind === 1 ? true : false }
+                                    noprice={el.noprice} 
+                                    price={el.price}
+                                    tarifName={el.tarifName}
+                                    howPay={el.howPay}
+                                    link={`${el.link}${myUserData.user.landing[activePage].id}`}
+                                    profits={el.profits}
+                                  /> })}
+                              </div>    
                                {/* <BtnStripePay buyButtonId={'buy_btn_1Nfz9dCDDrGgviapgOWnOq0h'}
                                 publishableKey={'pk_test_51NVx6PCDDrGgviap9yVasFTM0I2UEPtcapxkSR6uwzVkMMENEff4YybVmaBbQpodR5sk5K1aBWovtuvtv9NS2LsL00N0qG6hJh'}
                                 clientReferenceId={'123'}
@@ -168,7 +164,8 @@ function App() {
                         { profile?.email 
                         ?
                           <div className='footer'>
-                            <p>If you are experiencing any difficulties or have any suggestions on improvement, dont hesitate to write us an email at our email <a href="mailto:pyxl.project@gmail.com">pyxl.project@gmail.com</a></p>
+                            <p>If you are experiencing any difficulties or have any suggestions on improvement,</p>
+                            <p>dont hesitate to write us an email at our email <a href="mailto:pyxl.project@gmail.com">pyxl.project@gmail.com</a></p>
                           </div>
                         :
                           <></>  
@@ -184,19 +181,8 @@ function App() {
                 alignItems: 'center', // Выравнивание элементов по вертикали
                 height: '10vh', // Высота контейнера для центрирования по вертикали
               }}>
-                <button 
-                  onClick={() => login()} 
-                  style={{
-                    backgroundColor: 'white',
-                    border: '1px solid #ccc',
-                    borderRadius: '4px',
-                    padding: '10px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    cursor: 'pointer',
-                  }}>
-                    <GoogleIcon size={20} style={{ marginRight: '10px' }} />
-                  Sign in with Google
+                <button className="btn-google" onClick={() => login() }>
+                    <GoogleIcon size={20} style={{ marginRight: '10px' }} /> Sign up with Google
                 </button>
               </div>
               

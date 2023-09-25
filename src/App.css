@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-color: #15232E;
+  display: flex;
+  flex-direction: column;
+  max-width: 1700px;
+  max-height: 1280px;
+  flex-grow: 1;
 }
 
 p {
@@ -33,6 +39,15 @@ p {
   color: white;
 }
 
+.header-logo {
+  display: flex;
+  align-items: center; /* Выравнивание по вертикали */
+  justify-content: center; /* Выравнивание по горизонтали */
+  font-weight: 400;
+  margin: 0;
+  margin-block: 0;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -49,23 +64,27 @@ p {
 .app-container {
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 /* Стили для боковой панели справа */
 .sidebar {
-  background-color: #ccc;
+  background-color: #1F2935;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-right: 1px;
+  border-color: #1F2935;
+  max-width: 500px;
+  min-width: 200px;
+  flex-grow: 1;
 }
 
-.sidebar-right {
+.sidebar-left {
   display: flex;
   flex-direction: column;
-  justify-content: top;
   align-items: flex-end;
-  width: 20vw; /* Установите нужную ширину панели */
-  min-width: 150px;
+  width: 100%; /* Установите нужную ширину панели */
   background-color: #f0f0f0; /* Пример цвета фона */
   padding: 0;
 }
@@ -74,20 +93,28 @@ p {
 .sidebar-button {
   margin-bottom: 0;
   padding: 8px 16px;
-  background-color: #ccc; /* Пример цвета кнопок */
+  background-color: #1F2935; /* Пример цвета кнопок */
   color: #fff;
   border: none;
   cursor: pointer;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 400;
 }
-
+.sidebar-logout {
+  margin-bottom: 20px;
+}
+.sidebar-button_logout {
+  color: #FF0000;
+}
 .sidebar-button_action {
-  background-color: #5f5f5f; /* Пример цвета кнопок */
+  background-color: #15232E; /* Пример цвета кнопок */
+  border-width: 0;
+  border-left: 6px solid #ACC6E6;
 }
 
 .sidebar-button:hover {
-  background-color: #a8a5a5; /* Пример цвета кнопок */
+  background-color: #15232E; /* Пример цвета кнопок */
 }
 
 .sidebar-button:last-child {
@@ -96,24 +123,225 @@ p {
 
 .container {
   height: 82vh;
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+}
+
+.container_center {
+  justify-content: center;
+}
+
+.btn-google {
+  background-color: #ACC6E6;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 40px;
 }
 
 .header-container {
   display: flex;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
   height: 18vh; /* Высота заголовка (подстроить по своим требованиям) */
-  background-color: #ffa600; /* Пример цвета фона заголовка */
+  background-color: #1F2935; /* Пример цвета фона заголовка */
   color: #fff; /* Пример цвета текста заголовка */
-  flex-direction: column;
+  border-color: #24323D;
+  border-bottom: 1px;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.header-container_center {
+  justify-content: center;
+}
+
+.header-max {
+  display: flex;
+  margin-right: 100px;
+  flex-shrink: 1;
+
+}
+
+.header-max-contact{
+  text-align: left;
+  margin: 15px;
 }
 
 .header-container p {
   margin: 0;
 }
-
+.header-max-name {
+  color: white;
+  font-size: 18px;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  word-wrap: break-word
+}
+.header-max-email {
+ color: #B4B4B4;
+ font-size: 14px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 20px;
+ word-wrap: break-word
+}
+.header-site-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #B4B4B4;
+  margin: 0;
+}
+.header-main {
+  margin: 0 20px;
+  flex-shrink: 1;
+}
 h1 {
   font-size: 24px; /* Размер текста заголовка (подстроить по своим требованиям) */
+}
+
+p {
+  margin-block: 0;
+}
+
+
+/* setting         */
+h3, h5 {
+  margin-block: 0;
+}
+
+.setting {
+  max-width: 600px;
+  padding: 0 0 0 16px;
+}
+
+.setting-header {
+  font-size: 48px;
+  font-weight: 400;
+  color: #fff;
+  text-align: start;
+  margin-block: 0;
+}
+
+.setting-item {
+  padding-top: 12px;
+}
+.setting-title {
+  color: #B4B4B4;
+  font-size: 18px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.setting-name {
+  color: #fff;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+  background-color: #1F2935;
+  padding: 21px 24px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  min-height: 24px;
+}
+
+.setting-link {
+  color: #fff;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+  background-color: #1F2935;
+  text-align: left;
+  text-decoration: none;
+}
+
+.setting-link:hover {
+  color: #ACC6E6;
+}
+
+.setting-note {
+ color: #F9D45F;
+ font-size: 12px;
+ font-family: Inter;
+ font-weight: 400;
+ line-height: 20px;
+ word-wrap: break-word;
+ text-align: left;
+}
+
+.setting-input {
+  color: #000;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 515px) {
+  .header-container {
+    justify-content:center;
+    flex-direction: column;
+  }
+  .header-max {
+    margin: 0;
+    margin-top: 20px;
+  }
+  .header-main {
+    margin: 0;
+  }
+}
+
+.footer {
+  color: white;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+  text-align: left;
+  padding: 10px 0 10px 20px;
+}
+
+.footer a {
+  color: #ACC6E6;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.page-btn-header {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  color: #CCCCCC;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word
 }
 
 .for-btn-pay {
@@ -131,6 +359,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content:space-between;
+  width: 100%;
   overflow: auto;
 }
 
@@ -181,7 +410,7 @@ tr:nth-child(even) {
 .btn-pay {
   display: inline-block;
   padding: 7px 40px;
-  background-color: #ffbb00;
+  background-color: #ACC6E6;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -192,7 +421,7 @@ tr:nth-child(even) {
 
 /* Стили при наведении на кнопку */
 .btn-pay:hover {
-  background-color: #cf7c00;
+  background-color: rgba(172, 198, 230, 0.5);
 }
 
 /* Стили при нажатии на кнопку */
@@ -200,11 +429,6 @@ tr:nth-child(even) {
   transform: scale(0.95);
 }
 
-.page-btn {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
 .mw {
   max-width: 400px;
@@ -287,6 +511,10 @@ tr:nth-child(even) {
   width: 50%;
 }
 
+.w-13 {
+  width: 31%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -350,6 +578,13 @@ tr:nth-child(even) {
   margin-left: 0.25rem;
 }
 
+.w-8 {
+  width: 2rem;
+}
+.h-8 {
+  height: 2rem;
+}
+
 .flex.items-center {
   display: flex;
   align-items: center;
@@ -359,6 +594,9 @@ tr:nth-child(even) {
   margin-bottom: 0.5rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -399,7 +637,7 @@ tr:nth-child(even) {
 
 .button:hover {
   animation-play-state: paused; /* При наведении на кнопку анимация приостанавливается */
-  background-color: rgb(255, 120, 0);
+  
   opacity: 1;
 }
 
@@ -461,6 +699,7 @@ tr:nth-child(even) {
   width: calc(100% - 2rem);
   font-size: 1.5rem;
   text-decoration: none;
+  padding: 20px;
   animation: flash 1s infinite; /* Здесь 2s - продолжительность анимации, infinite - бесконечное повторение */
 }
 
@@ -473,31 +712,58 @@ tr:nth-child(even) {
 
 .faq-page h1 {
   font-size: 36px;
-  color: #333;
+  color: #fff;
   text-align: center;
   margin-bottom: 30px;
+  margin-left: 20px;
+  text-align: left;
 }
+
+.price-btn {
+  width: calc(33% - 30px);
+  min-width: 200px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 930px) {
+  .price-btn {
+    width: calc(100% - 30px);
+    padding-bottom: 0;
+  }
+  
+}
+
 
 /* Стили для блока с вопросом и ответом */
 .faq-item {
-  background-color: rgba(255, 163, 0, 0.5);
+  background-color: #1F2935;
   border-radius: 10px;
-  padding: 20px;
+  padding: 0 16px 16px 16px;
   margin: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
 }
 
 /* Стили для заголовка вопроса */
 .faq-item h2 {
   font-size: 24px;
-  color: #555;
-  margin-bottom: 10px;
+  color: white;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 500;
+  word-wrap: break-word;
+  text-align: left;
 }
 
 /* Стили для текста ответа */
 .faq-item p {
   font-size: 18px;
-  color: #777;
+  color: white;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+  text-align: left;
 }
 
 /* Стили для кнопки или ссылки (если потребуется) */
@@ -527,6 +793,139 @@ tr:nth-child(even) {
 
 .faq-item .no a:hover {
   color: #cc0000;
+}
+
+h2 {
+  margin-block: 0;
+}
+.price-tarif{
+  color: white;
+  font-size: 22px;
+  font-family: Inter;
+  font-weight: 700;
+  word-wrap: break-word;
+  text-align: left;
+}
+.btn-pay-block {
+  background-color: #1F2935;
+}
+.btn-pay-block_main {
+  background-color: #2C587A;
+}
+
+.text-decoration {
+  color: #979797;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 600;
+  word-wrap: break-word;
+  text-align: left;
+  margin-top: 20px;
+  min-height: 46px;
+}
+.text-price {
+  color: white;
+  font-size: 56px;
+  font-family: Inter;
+  font-weight: 600;
+  word-wrap: break-word;
+  text-align: left;
+}
+.text-price-period {
+  color: #CCCCCC;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+.text-how-pay {
+  color: white;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+  text-align: left;
+}
+.items-center {
+  align-items: center
+}
+.page-pay-btn-pay {
+  color: white;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 600;
+  word-wrap: break-word;
+  border: 1.5px solid #fff;
+}
+.page-pay-btn-pay_main {
+  background-color: white;
+  color: #2C587A;
+
+}
+
+.btn-pay-options {
+  margin-top: 40px;
+}
+.btn-pay-option-item {
+  color: white;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.btn-pay-options-ok {
+  background-color: #15232E;
+  color: #2C587A;
+}
+
+.btn-pay-options-ok_main {
+  background-color: white;
+  color: #2C587A;
+}
+
+.page-btn {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.header-logo-img {
+  width: 30px;
+  margin-right: 6px;
+}
+#root {
+  width: 100%;
+  height: 100vh; /* Высота равна высоте видимой области окна браузера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.tsh-label-br{
+  bottom:5%;
+  right:5%;
+  border-radius: 5px;}
+
+.tsh-chatbox-br{
+  bottom: 1px;
+  right: 5%;
+  border-radius: 11px 11px 0 0;
+}
+
+@media (min-width: 1700px) {
+  .tsh-label-br, .tsh-chatbox-br{
+    right:calc((100% - 1700px) / 2 + 5%);
+  }
+}
+
+@media (min-height: 1280px) {
+  .tsh-label-br{
+    bottom:calc((100% - 1280px) / 2 + 5%);
+  }
+  .tsh-chatbox-br{
+    bottom: calc((100% -1280px) / 2 + 1px);
+  }
 }
 /*
 @keyframes fadeIn {

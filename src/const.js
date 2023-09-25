@@ -2,9 +2,12 @@
 export const buyButtons = {
     buttons: [{
         noprice: '$5.99/mo',
-        price: '$1.99/mo paid annually',
+        price: '$1.99',
+        howPay: 'paid annually',
         tarifName: 'Super light',
-        link: 'https://buy.stripe.com/test_9AQdUJ2Sa8LY34cdQV?client_reference_id=',
+        //https://buy.stripe.com/bIYg278Ex1eecgg3ch
+        //link: 'https://buy.stripe.com/test_9AQdUJ2Sa8LY34cdQV?client_reference_id=',
+        link: 'https://buy.stripe.com/bIYg278Ex1eecgg3ch?client_reference_id=',
         profits: [
             'Ai assisted builder (why would you come here anyways)',
             'Functional Buttons (enables them to work)',
@@ -16,23 +19,27 @@ export const buyButtons = {
     },
     {
         noprice: '$15.99/mo',
-        price: '$8.99/mo paid annually',
+        price: '$8.99',
+        howPay: 'paid annually',
         tarifName: 'Light',
-        link: 'https://buy.stripe.com/test_7sI5od50iaU69sA9AG?client_reference_id=',
+        //https://buy.stripe.com/aEU9DJdYRg985RSaEI
+        //link: 'https://buy.stripe.com/test_7sI5od50iaU69sA9AG?client_reference_id=',
+        link: 'https://buy.stripe.com/aEU9DJdYRg985RSaEI?client_reference_id=',
         profits: [
             'Everything from Super Light +',
             'Enabled Lead forms if you have any - you will get emails any time someone submits a form',
-            'Custom pixel integration (тупо дать возможность вставлять кастомный код чтобы люди могли установить свой трекинг пиксель например)',
+            'Custom pixel integration',
             'Easy Chat integration at no extra cost (Coming up soon)'
         ]
     },
     {
         noprice: '',
-        price: '$950/mo',
+        price: '$950',
+        howPay: 'paid annually',
         tarifName: 'Custom ',
         link: 'mailto:pyxl.project@gmail.com',
         profits: [
-            'But seriously, if any functionality is missing - just send us an email requesting the functionality and we will try to jump on it.'
+            'This is obviously a joke, but seriously, if any functionality is missing - just send us an email requesting the functionality you need and we will try to jump on it and implement it for you.'
         ]
     }]
 }
