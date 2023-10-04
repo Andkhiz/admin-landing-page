@@ -851,7 +851,7 @@ h2 {
 }
 .page-pay-btn-pay {
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   font-family: Inter;
   font-weight: 600;
   word-wrap: break-word;
@@ -887,6 +887,12 @@ h2 {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.header-picture {
+  border-radius: 50%;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .header-logo-img {

@@ -74,7 +74,7 @@ const SettingsList = (props) => {
     const date = new Date(second * 1000).toLocaleString();
     return date.split(',')[0]
   }
-console.log(data)
+    console.log(data)
   return (
     <div className='setting'>
       <h2 className='setting-header'>Settings</h2>
@@ -84,8 +84,8 @@ console.log(data)
         note=""
         isEditing={false}
         isButton={false}
-        isLink={false}
-        link=""
+        isLink={true}
+        link={data.link}
       />
       
       {/* ---- Пока такой костыль           */}
@@ -149,7 +149,7 @@ console.log(data)
       />
       <SettingsItem 
         title="Current Plan"
-        text= {data.tarif === null ? 'None' : data.tarif }
+        text= {data.tarif === null ? 'None' : (data.tarif === 'light' ? 'LeadGen Landing' : 'Simple InfoPage' )  }
         note="" 
         isEditing={false} 
         isButton={true}

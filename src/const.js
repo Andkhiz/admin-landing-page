@@ -4,7 +4,7 @@ export const buyButtons = {
         noprice: '$5.99/mo',
         price: '$1.99',
         howPay: 'paid annually',
-        tarifName: 'Super light',
+        tarifName: 'Simple InfoPage',
         //https://buy.stripe.com/bIYg278Ex1eecgg3ch
         //link: 'https://buy.stripe.com/test_9AQdUJ2Sa8LY34cdQV?client_reference_id=',
         link: 'https://buy.stripe.com/bIYg278Ex1eecgg3ch?client_reference_id=',
@@ -21,7 +21,7 @@ export const buyButtons = {
         noprice: '$15.99/mo',
         price: '$8.99',
         howPay: 'paid annually',
-        tarifName: 'Light',
+        tarifName: 'LeadGen Landing',
         //https://buy.stripe.com/aEU9DJdYRg985RSaEI
         //link: 'https://buy.stripe.com/test_7sI5od50iaU69sA9AG?client_reference_id=',
         link: 'https://buy.stripe.com/aEU9DJdYRg985RSaEI?client_reference_id=',
