@@ -6,7 +6,7 @@ export const buyButtons = {
         howPay: 'paid annually',
         tarifName: 'Simple InfoPage',
         //https://buy.stripe.com/bIYg278Ex1eecgg3ch
-        //link: 'https://buy.stripe.com/test_9AQdUJ2Sa8LY34cdQV?client_reference_id=',
+        //link: 'https://buy.stripe.com/test_dR603TgJ0aU62089AH?client_reference_id=',
         link: 'https://buy.stripe.com/bIYg278Ex1eecgg3ch?client_reference_id=',
         profits: [
             'Ai assisted builder (why would you come here anyways)',

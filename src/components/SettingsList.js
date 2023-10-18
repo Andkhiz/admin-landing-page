@@ -74,7 +74,7 @@ const SettingsList = (props) => {
     const date = new Date(second * 1000).toLocaleString();
     return date.split(',')[0]
   }
-    console.log(data)
+   
   return (
     <div className='setting'>
       <h2 className='setting-header'>Settings</h2>

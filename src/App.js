@@ -165,7 +165,7 @@ function App() {
                         ?
                           <div className='footer'>
                             <p>If you are experiencing any difficulties or have any suggestions on improvement,</p>
-                            <p>dont hesitate to write us an email at our email <a href="mailto:pyxl.project@gmail.com">pyxl.project@gmail.com</a></p>
+                            <p>dont hesitate to write us an email at our email <a href="mailto:customers@pyxl.uk">customers@pyxl.uk</a></p>
                           </div>
                         :
                           <></>  

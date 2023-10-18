@@ -3,9 +3,19 @@
   background-color: #15232E;
   display: flex;
   flex-direction: column;
+  height: 100%;
   max-width: 1700px;
   max-height: 1280px;
   flex-grow: 1;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+  color: #2a2b32;
+  font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
 }
 
 p {
@@ -46,6 +56,7 @@ p {
   font-weight: 400;
   margin: 0;
   margin-block: 0;
+  font-size: 32px;
 }
 
 .App-link {
@@ -75,9 +86,10 @@ p {
   justify-content: space-between;
   border-right: 1px;
   border-color: #1F2935;
-  max-width: 500px;
-  min-width: 200px;
-  flex-grow: 1;
+  width: clamp(200px, 20vw, 300px);
+  /*max-width: 500px;
+  min-width: 200px;*/
+  /*flex-grow: 1;*/
 }
 
 .sidebar-left {
@@ -92,7 +104,7 @@ p {
 /* Стили для кнопок боковой панели */
 .sidebar-button {
   margin-bottom: 0;
-  padding: 8px 16px;
+  padding: 12px 16px;
   background-color: #1F2935; /* Пример цвета кнопок */
   color: #fff;
   border: none;
@@ -122,10 +134,13 @@ p {
 }
 
 .container {
-  height: 82vh;
+  /*height: 90vh;*/
+  flex: 1;
   display: flex;
   align-items: center;
   min-width: 300px;
+  /*position: relative;*/
+  overflow: auto;
 }
 
 .container_center {
@@ -146,7 +161,9 @@ p {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  height: 18vh; /* Высота заголовка (подстроить по своим требованиям) */
+  flex: 0 0 auto;
+  min-height: 103px;
+  /*height: clamp(100px, 10vh, 130px);  /*Высота заголовка (подстроить по своим требованиям) */
   background-color: #1F2935; /* Пример цвета фона заголовка */
   color: #fff; /* Пример цвета текста заголовка */
   border-color: #24323D;
@@ -163,7 +180,7 @@ p {
   display: flex;
   margin-right: 100px;
   flex-shrink: 1;
-
+  align-items: center;
 }
 
 .header-max-contact{
@@ -225,6 +242,7 @@ h3, h5 {
   color: #fff;
   text-align: start;
   margin-block: 0;
+  padding-bottom: 60px;
 }
 
 .setting-item {
@@ -359,7 +377,7 @@ h3, h5 {
   display: flex;
   flex-direction: column;
   justify-content:space-between;
-  width: 100%;
+  /*width: 100%;*/
   overflow: auto;
 }
 
@@ -891,12 +909,12 @@ h2 {
 
 .header-picture {
   border-radius: 50%;
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .header-logo-img {
-  width: 30px;
+  width: 45px;
   margin-right: 6px;
 }
 #root {
